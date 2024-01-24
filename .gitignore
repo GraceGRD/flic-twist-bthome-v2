@@ -1,0 +1,16 @@
+# https://docs.silabs.com/simplicity-studio-5-users-guide/5.6.3/ss-5-users-guide-tips-and-tricks/
+
+# Ignore Simplicity Studio files
+.trash/
+.uceditor/
+.projectlinkstore
+trashed_modified_files/
+
+# Ignore build output directories
+GNU*/
+
+# Ignore Simplicity Studio files
+.pdm/
+.settings/
+.uceditor/
+trashed_modified_files/
