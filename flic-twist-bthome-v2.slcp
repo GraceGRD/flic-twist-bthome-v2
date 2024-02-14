@@ -23,20 +23,21 @@ include:
 - path: ''
   file_list:
   - {path: app.h}
-sdk: {id: gecko_sdk, version: 4.3.2}
+sdk: {id: gecko_sdk, version: 4.4.1}
 toolchain_settings: []
 component:
-- {id: bluetooth_feature_gatt_server}
 - instance: [cli]
   id: cli
+- {id: bluetooth_feature_gatt_server}
 - {from: third_party_hw_drivers, id: services_bthome_v2}
 - {id: bluetooth_feature_sm}
-- {id: mpu}
 - {id: bluetooth_feature_legacy_advertiser}
+- {id: mpu}
 - {id: gatt_configuration}
 - {id: gatt_service_device_information}
 - {id: bluetooth_stack}
 - {id: rail_util_pti}
+- {id: ustimer}
 - {id: bluetooth_feature_gatt}
 - {id: bluetooth_feature_legacy_scanner}
 - {id: app_log}

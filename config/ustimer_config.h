@@ -1,9 +1,9 @@
 /***************************************************************************//**
  * @file
- * @brief RAIL power manager configuration file.
+ * @brief USTIMER configuration file.
  *******************************************************************************
  * # License
- * <b>Copyright 2020 Silicon Laboratories Inc. www.silabs.com</b>
+ * <b>Copyright 2018 Silicon Laboratories Inc. www.silabs.com</b>
  *******************************************************************************
  *
  * SPDX-License-Identifier: Zlib
@@ -27,18 +27,29 @@
  * 3. This notice may not be removed or altered from any source distribution.
  *
  ******************************************************************************/
+#ifndef __SILICON_LABS_USTIMER_CONFIG_H__
+#define __SILICON_LABS_USTIMER_CONFIG_H__
 
-#ifndef SL_RAIL_UTIL_POWER_MANAGER_INIT_CONFIG_H
-#define SL_RAIL_UTIL_POWER_MANAGER_INIT_CONFIG_H
+/***************************************************************************//**
+ * @addtogroup ustimer
+ * @{
+ ******************************************************************************/
 
-// <<< Use Configuration Wizard in Context Menu >>>
+// <<< sl:start pin_tool >>>
+// <timer> USTIMER
+// $[TIMER_USTIMER]
+#ifndef USTIMER_PERIPHERAL                      
+#define USTIMER_PERIPHERAL                       TIMER0
+#endif
+#ifndef USTIMER_PERIPHERAL_NO                   
+#define USTIMER_PERIPHERAL_NO                    0
+#endif
+// [TIMER_USTIMER]$
 
-// <h> RAIL power manager configuration
+// <<< sl:end pin_tool >>>
 
-// <o SL_RAIL_UTIL_RAIL_POWER_MANAGER_INIT> Enable RAIL power manager initialization
-// <i> Default: 1
-#define SL_RAIL_UTIL_RAIL_POWER_MANAGER_INIT 1
+#define USTIMER_TIMER USTIMER_PERIPHERAL_NO
 
-// </h>
-// <<< end of configuration section >>>
-#endif // SL_RAIL_UTIL_POWER_MANAGER_INIT_CONFIG_H
+/** @} (end addtogroup ustimer) */
+
+#endif /* __SILICON_LABS_USTIMER_CONFIG_H__ */

@@ -24,9 +24,10 @@
 #define LED4u_LED10u_PIN              3
 #define LED5u_LED11u_PORT             gpioPortC
 #define LED5u_LED11u_PIN              4
-#define LED12u_LED6u_PORT             gpioPortC
-#define LED12u_LED6u_PIN              5
+#define LED6u_LED12u_PORT             gpioPortC
+#define LED6u_LED12u_PIN              5
 
+#define LED_COUNT               12
 
 #define MASK_LED1_TO_LED6       0x003F //0b 0000 0000 0011 1111
 #define MASK_LED7_TO_LED12      0x0FC0 //0b 0000 1111 1100 0000
@@ -51,5 +52,7 @@
 void flicled_init(void);
 bool flicled_brightness(uint8_t brightness);
 bool flicled_led(uint32_t ledMask);
+
+bool flicled_animation_rotate(void);
 
 #endif // FLICLED_H

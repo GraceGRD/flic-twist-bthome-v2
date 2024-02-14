@@ -36,6 +36,7 @@
 void reset(sl_cli_command_arg_t *arguments);
 void dim(sl_cli_command_arg_t *arguments);
 void led(sl_cli_command_arg_t *arguments);
+void animation(sl_cli_command_arg_t *arguments);
 
 /*******************************************************************************
  ***************************  LOCAL VARIABLES   ********************************
@@ -59,10 +60,17 @@ static const sl_cli_command_info_t cmd_led = \
                  "[0b 0000 1111 1111 1111] (use uint16 or hex as input)",
                  { SL_CLI_ARG_UINT16, SL_CLI_ARG_END, });
 
+static const sl_cli_command_info_t cmd_animation = \
+  SL_CLI_COMMAND(animation,
+                 "ANIMATION",
+                 "instruction: Run animation (rotate). ",
+                 { SL_CLI_ARG_STRING, SL_CLI_ARG_END, });
+
 static sl_cli_command_entry_t a_table[] = {
   { "reset", &cmd_reset, false},
   { "dim", &cmd_dim, false},
   { "led", &cmd_led, false},
+  { "animation", &cmd_animation, false},
   { NULL, NULL, false },
 };
 
@@ -98,6 +106,23 @@ void led(sl_cli_command_arg_t *arguments)
 {
   uint16_t ledNumber = sl_cli_get_argument_uint16(arguments, 0);
   app_log("<%s>\r\n", flicled_led(ledNumber) ? "ACK" : "NACK");
+}
+
+void animation(sl_cli_command_arg_t *arguments)
+{
+  char *command;
+  command = sl_cli_get_argument_string(arguments, 0);
+
+  if (strcmp(command, "rotate") == 0)
+  {
+    flicled_animation_rotate();
+    app_log("<ACK>\r\n");
+  }
+  else
+  {
+    app_log("<NACK>\r\n");
+  }
+
 }
 
 /*******************************************************************************
