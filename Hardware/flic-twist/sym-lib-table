@@ -1,0 +1,5 @@
+(sym_lib_table
+  (version 7)
+  (lib (name "kicad-libs")(type "KiCad")(uri "${KIPRJMOD}/kicad-libs/efr32bg22.kicad_sym")(options "")(descr ""))
+  (lib (name "XC9145B33CER-G")(type "KiCad")(uri "${KIPRJMOD}/XC9145B33CER-G/XC9145B33CER-G.kicad_sym")(options "")(descr ""))
+)

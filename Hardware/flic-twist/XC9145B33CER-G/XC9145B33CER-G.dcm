@@ -1,0 +1,9 @@
+EESchema-DOCLIB  Version 2.0
+#
+$CMP XC9145B33CER-G
+D Idd=400nA, Iin=0.8A, Low Power Synchronous Step-up
+K
+F https://www.torexsemi.com/file/xc9145/XC9145.pdf
+$ENDCMP
+#
+#End Doc Library
